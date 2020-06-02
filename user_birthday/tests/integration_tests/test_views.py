@@ -7,6 +7,7 @@ from user_birthday.models import User
 from user_birthday.serializers import UserSerializer
 from django.db.models import Q
 
+
 class BaseViewTest(APITestCase):
     client = APIClient()
 
