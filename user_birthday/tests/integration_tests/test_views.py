@@ -5,7 +5,7 @@ from rest_framework.test import APITestCase, APIClient
 from rest_framework.views import status
 from user_birthday.models import User
 from user_birthday.serializers import UserSerializer
-
+from django.db.models import Q
 
 class BaseViewTest(APITestCase):
     client = APIClient()
@@ -90,6 +90,33 @@ class CreateUsersViewTest(BaseViewTest):
         )
         actual_user = UserSerializer(User.objects.get(email="test.user@gmail.com")).data
         expected_user = UserSerializer(test_data).data
+        self.assertEquals(response.status_code, status.HTTP_201_CREATED)
+        self.assertEquals(actual_user, expected_user)
+
+    def test_insert_multiple_users(self):
+        test_data = [
+            {
+                "first_name": "Test",
+                "last_name": "User1",
+                "email": "test.user1@gmail.com",
+                "birthday": "01.02.1981"
+            },
+            {
+                "first_name": "Test2",
+                "last_name": "User2",
+                "email": "test.user2@gmail.com",
+                "birthday": "01.02.1982"
+            },
+        ]
+        response = self.client.post(
+            reverse("users-insert-bulk"),
+            test_data,
+            'json'
+        )
+        actual_user = UserSerializer(
+            User.objects.filter(Q(email="test.user1@gmail.com") | Q(email="test.user2@gmail.com")), many=True
+        ).data
+        expected_user = UserSerializer(test_data, many=True).data
         self.assertEquals(response.status_code, status.HTTP_201_CREATED)
         self.assertEquals(actual_user, expected_user)
 
