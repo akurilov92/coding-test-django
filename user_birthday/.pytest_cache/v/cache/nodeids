@@ -1,0 +1,5 @@
+[
+  "tests/unit_tests/test_query_param_validation.py::ParseBirthdayFilter::test_parse_birthday_filter_ddmm",
+  "tests/unit_tests/test_query_param_validation.py::ParseBirthdayFilter::test_parse_birthday_filter_leadingzeroes",
+  "tests/unit_tests/test_query_param_validation.py::ParseBirthdayFilter::test_parse_birthday_filter_noleadingzeroes"
+]

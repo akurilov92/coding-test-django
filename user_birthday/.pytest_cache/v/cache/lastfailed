@@ -1,0 +1,4 @@
+{
+  "tests/integration_tests/test_views.py": true,
+  "tests/unit_tests/test_serializers.py": true
+}
