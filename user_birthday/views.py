@@ -7,7 +7,6 @@ from rest_framework.exceptions import ParseError
 from rest_framework import views
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
-from letter_digit.letter_case_permutation import letter_case_permutation
 
 
 class CreateUsersView(generics.CreateAPIView):
