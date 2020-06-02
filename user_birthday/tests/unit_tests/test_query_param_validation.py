@@ -1,5 +1,5 @@
 from django.test import SimpleTestCase
-from djangotest.query_param_validation import parse_birthday_filter
+from user_birthday.query_param_validation import parse_birthday_filter
 
 
 class TestParseBirthdayFilter(SimpleTestCase):

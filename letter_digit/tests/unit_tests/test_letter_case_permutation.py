@@ -1,5 +1,5 @@
 from django.test import SimpleTestCase
-from djangotest.letter_case_permutation import letter_case_permutation
+from letter_digit.letter_case_permutation import letter_case_permutation
 
 
 class TestLetterCasePermutation(SimpleTestCase):

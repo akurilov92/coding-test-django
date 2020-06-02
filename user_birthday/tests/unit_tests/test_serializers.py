@@ -1,6 +1,6 @@
 from django.test import SimpleTestCase
-from djangotest.serializers import UserSerializer
-from djangotest.models import User
+from user_birthday.serializers import UserSerializer
+from user_birthday.models import User
 
 
 class TestSerializer(SimpleTestCase):

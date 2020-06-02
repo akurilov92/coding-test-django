@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
-    'djangotest.apps.DjangotestConfig'
+    'user_birthday.apps.UserBirthdayConfig',
+    'letter_digit.apps.LetterDigitConfig'
 ]
 
 MIDDLEWARE = [
