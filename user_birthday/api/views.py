@@ -1,3 +1,5 @@
+from django.utils.decorators import method_decorator
+from django.views.decorators.cache import cache_page
 from rest_framework import generics, status
 from .models import User
 from .serializers import UserSerializer
@@ -38,7 +40,7 @@ class ListUsersView(generics.ListAPIView):
 
 
 class AverageAgeView(views.APIView):
-    # @method_decorator(cache_page(60))
+    @method_decorator(cache_page(60))
     def get(self, request):
         avg_age = User.objects.extra({'avg': 'AVG(extract (year from AGE(birthday)))'}).values('avg')
         return Response(avg_age)
