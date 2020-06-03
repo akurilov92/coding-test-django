@@ -18,11 +18,11 @@ the `letter_digit` service will be at `localhost:8002`
 
 To run the tests for `birthday_service`:
 
-    `docker-compose run user_birthday_web python ./user_birthday/manage.py test user_birthday`
+    docker-compose run user_birthday_web python ./user_birthday/manage.py test user_birthday
 
 To run the tests for `letter_digit`:
 
-    `docker-compose run letter_digit_web python ./letter_digit/manage.py test letter_digit`
+    docker-compose run letter_digit_web python ./letter_digit/manage.py test letter_digit
 
 
 
